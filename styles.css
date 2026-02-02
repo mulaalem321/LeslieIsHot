@@ -135,6 +135,7 @@ body .container {
 }
 
 .quiz-question {
+  font-family: Arial, sans-serif;
   font-size: 24px;
   color: #71004f;
   margin-bottom: 20px;
@@ -155,7 +156,7 @@ body .container {
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
-  font-family: "Lobster", cursive;
+  font-family: Arial, sans-serif;
   transition: transform 0.2s, background-color 0.2s;
 }
 
