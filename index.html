@@ -10,12 +10,33 @@
 
 <body>
     <div class="container">
-        <div class="Mainprompt">
+        <!-- Quiz Section -->
+        <div class="quiz-section" id="quiz-section">
+            <h1 class="hh">How Well Do You Know Us?</h1>
+            <p class="quiz-subtitle">Answer these questions to unlock a surprise!</p>
+
+            <div class="quiz-progress">
+                <span id="current-question">1</span> / <span id="total-questions">3</span>
+            </div>
+
+            <div class="quiz-card">
+                <img class="quiz-image" id="quiz-image" src="images/catflower.jpg" alt="Quiz photo">
+                <p class="quiz-question" id="quiz-question-text">Where was this photo taken?</p>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options will be inserted by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quiz-feedback" id="quiz-feedback"></div>
+        </div>
+
+        <!-- Main Proposal (hidden initially) -->
+        <div class="Mainprompt" id="main-proposal" style="display: none;">
             <img class="image" src="images/catflower.jpg"></img>
             <h1 class="hh" id="name">Hey beautiful!</h1>
             <p class="pp" id="question">Will you be my Valentine?</p>
             <div class="buttons">
-                <button id="no-button" onclick="showMessage('No')">No</button>
+                <button id="no-button">No</button>
                 <button onclick="showMessage('Yes')" id="yesButton">Yes</button>
             </div>
             <div class="hidden-message" id="no-message">
