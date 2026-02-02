@@ -34,6 +34,7 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
+let missedQuestions = [];
 
 // Initialize quiz when page loads
 document.addEventListener("DOMContentLoaded", function() {
@@ -84,6 +85,7 @@ function selectAnswer(selectedIndex) {
     options[selectedIndex].classList.add("wrong");
     options[question.correctAnswer].classList.add("correct");
     feedback.textContent = "Not quite, but nice try!";
+    missedQuestions.push(currentQuestionIndex + 1);
     createDislikes();
   }
 
@@ -106,30 +108,33 @@ function finishQuiz() {
 
   // Check for perfect score
   if (score === quizQuestions.length) {
-    feedback.textContent = `You got ${score}/${quizQuestions.length}! PERFECT SCORE!`;
+    // Show Starbucks reward immediately in the card
+    quizCard.innerHTML = `
+      <p class="perfect-score-text">PERFECT SCORE!</p>
+      <p class="quiz-question">You answered all questions correctly!</p>
+      <img class="quiz-image" src="images/starbucks.gif" alt="Starbucks">
+      <p class="reward-text">You win a FREE Starbucks!</p>
+    `;
+    feedback.textContent = "";
 
     setTimeout(() => {
-      // Show Starbucks reward
+      // Dramatic transition - show in the card
       quizCard.innerHTML = `
-        <img class="quiz-image" src="images/starbucks.gif" alt="Starbucks">
-        <p class="quiz-question">You answered all questions correctly!</p>
-        <p class="reward-text">You win a FREE Starbucks!</p>
+        <p class="dramatic-text">But wait...</p>
       `;
-      feedback.textContent = "";
-    }, 1500);
+    }, 3500);
 
     setTimeout(() => {
-      // Dramatic transition
-      feedback.innerHTML = "But wait...";
-    }, 4000);
+      quizCard.innerHTML = `
+        <p class="dramatic-text">There's something else...</p>
+      `;
+    }, 5000);
 
     setTimeout(() => {
-      feedback.innerHTML = "There's something else...";
-    }, 5500);
-
-    setTimeout(() => {
-      feedback.innerHTML = "Something important...";
-    }, 7000);
+      quizCard.innerHTML = `
+        <p class="dramatic-text">Something important...</p>
+      `;
+    }, 6500);
 
     setTimeout(() => {
       quizSection.classList.add("fade-out");
@@ -140,23 +145,26 @@ function finishQuiz() {
         mainProposal.classList.add("fade-in");
         setupNoButton();
       }, 500);
-    }, 8500);
+    }, 8000);
 
   } else {
-    // Normal flow for non-perfect score
-    feedback.textContent = `You got ${score}/${quizQuestions.length}! Now for the big question...`;
-
-    setTimeout(() => {
-      quizSection.classList.add("fade-out");
-
-      setTimeout(() => {
-        quizSection.style.display = "none";
-        mainProposal.style.display = "block";
-        mainProposal.classList.add("fade-in");
-        setupNoButton();
-      }, 500);
-    }, 2000);
+    // Not perfect - show missed questions and try again
+    const missedList = missedQuestions.join(", ");
+    quizCard.innerHTML = `
+      <p class="quiz-question">You missed question${missedQuestions.length > 1 ? 's' : ''}: ${missedList}</p>
+      <p class="try-again-text">You need a perfect score to continue!</p>
+      <button class="quiz-option try-again-btn" onclick="restartQuiz()">Try Again</button>
+    `;
+    feedback.textContent = `You got ${score}/${quizQuestions.length}`;
   }
+}
+
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  missedQuestions = [];
+  document.getElementById("quiz-feedback").textContent = "";
+  loadQuestion();
 }
 
 // No button state

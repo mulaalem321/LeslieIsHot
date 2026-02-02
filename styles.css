@@ -187,6 +187,33 @@ body .container {
   animation: pulse 1s infinite;
 }
 
+.perfect-score-text {
+  font-size: 32px;
+  color: #ff1493;
+  -webkit-text-stroke: 1px #71004f;
+  margin-bottom: 10px;
+  animation: pulse 1s infinite;
+}
+
+.dramatic-text {
+  font-size: 28px;
+  color: #71004f;
+  padding: 50px 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.try-again-text {
+  font-size: 20px;
+  color: #71004f;
+  margin: 15px 0;
+  font-family: Arial, sans-serif;
+}
+
+.try-again-btn {
+  margin-top: 10px;
+  background-color: #ff4d79 !important;
+}
+
 .quiz-section.fade-out {
   animation: fadeOut 0.5s forwards;
 }
