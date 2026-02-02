@@ -83,7 +83,6 @@ function selectAnswer(selectedIndex) {
     score++;
   } else {
     options[selectedIndex].classList.add("wrong");
-    options[question.correctAnswer].classList.add("correct");
     feedback.textContent = "Not quite, but nice try!";
     missedQuestions.push(currentQuestionIndex + 1);
     createDislikes();
