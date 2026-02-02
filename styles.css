@@ -33,7 +33,7 @@ body .container {
   max-width: 500px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
   background-color: transparent;
 }
@@ -131,7 +131,7 @@ body .container {
   max-height: 250px;
   border-radius: 15px;
   margin-bottom: 15px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .quiz-question {
@@ -254,14 +254,13 @@ body .container {
 /* Mobile responsive */
 @media (max-width: 600px) {
   body {
-    font-size: 24px;
-    padding: 5px;
-    align-items: flex-start;
-    padding-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    align-items: center;
   }
 
   .pp {
-    font-size: 24px;
+    font-size: 22px;
     -webkit-text-stroke: 1px #71004f;
     margin: 5px 0;
   }
@@ -273,13 +272,13 @@ body .container {
   }
 
   .buttons {
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .buttons button {
-    padding: 12px 30px;
-    font-size: 22px;
+    padding: 12px 25px;
+    font-size: 20px;
     min-width: 80px;
     margin: 3px;
   }
@@ -300,17 +299,17 @@ body .container {
 
   .quiz-section .hh {
     font-size: 18px;
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
   }
 
   .quiz-subtitle {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
 
   .quiz-progress {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
   }
 
   .quiz-card {
@@ -318,33 +317,34 @@ body .container {
   }
 
   .quiz-image {
-    max-height: 150px;
-    width: 100%;
-    margin-bottom: 10px;
+    max-height: 180px;
+    width: auto;
+    margin-bottom: 8px;
+    object-fit: contain;
   }
 
   .quiz-question {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 8px;
   }
 
   .quiz-option {
-    font-size: 16px;
-    padding: 10px 12px;
+    font-size: 15px;
+    padding: 8px 10px;
   }
 
   .quiz-options {
-    gap: 8px;
+    gap: 6px;
   }
 
   .quiz-feedback {
-    font-size: 16px;
-    margin-top: 10px;
-    min-height: 20px;
+    font-size: 14px;
+    margin-top: 8px;
+    min-height: 18px;
   }
 
   .reward-text {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .Mainprompt {
