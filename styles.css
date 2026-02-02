@@ -33,7 +33,7 @@ body .container {
   max-width: 500px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   background-color: transparent;
 }
@@ -255,78 +255,99 @@ body .container {
 @media (max-width: 600px) {
   body {
     font-size: 24px;
-    padding: 15px;
+    padding: 5px;
+    align-items: flex-start;
+    padding-top: 10px;
   }
 
   .pp {
-    font-size: 26px;
+    font-size: 24px;
     -webkit-text-stroke: 1px #71004f;
+    margin: 5px 0;
   }
 
   .hh {
-    font-size: 24px;
+    font-size: 20px;
     -webkit-text-stroke: 1px #71004f;
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .buttons button {
-    padding: 15px 35px;
-    font-size: 24px;
+    padding: 12px 30px;
+    font-size: 22px;
     min-width: 80px;
-    margin: 5px;
+    margin: 3px;
   }
 
   .image {
-    height: 180px;
+    height: 150px;
     max-width: 100%;
   }
 
   .countdown {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .quiz-section {
-    padding: 10px;
+    padding: 5px;
     width: 100%;
+  }
+
+  .quiz-section .hh {
+    font-size: 18px;
+    margin: 0 0 5px 0;
   }
 
   .quiz-subtitle {
-    font-size: 18px;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .quiz-progress {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .quiz-card {
-    padding: 15px;
+    padding: 10px;
   }
 
   .quiz-image {
-    max-height: 200px;
+    max-height: 150px;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .quiz-question {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .quiz-option {
     font-size: 16px;
-    padding: 12px 15px;
+    padding: 10px 12px;
+  }
+
+  .quiz-options {
+    gap: 8px;
   }
 
   .quiz-feedback {
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
+    min-height: 20px;
   }
 
   .reward-text {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .Mainprompt {
-    padding: 10px;
+    padding: 5px;
   }
 }
